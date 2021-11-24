@@ -3,7 +3,9 @@ import {StyleSheet, TouchableOpacity, View} from 'react-native';
 import {Button} from '../../../../components/ui/Button';
 import Modal from 'react-native-modal';
 import {IconSvgClose} from '../../../../assets/icons/IconSvgClose';
-import { Colors } from "../../../../styles/Colors";
+import {Colors} from '../../../../styles/Colors';
+import Navigation from '../../../../base/Navigation';
+import {screens} from '../../../../navigation/screens';
 
 interface ILearnModal {
   visible: boolean;
@@ -11,6 +13,11 @@ interface ILearnModal {
 }
 
 export const LearnModal = ({visible, closeModal}: ILearnModal) => {
+  const handlePressLearn = () => {
+    closeModal();
+    Navigation.navigate(screens.LEARN);
+  };
+
   return (
     <Modal isVisible={visible} style={styles.modalView}>
       <View style={styles.containerStyle}>
@@ -18,7 +25,7 @@ export const LearnModal = ({visible, closeModal}: ILearnModal) => {
           <TouchableOpacity onPress={closeModal} style={styles.close}>
             <IconSvgClose color={Colors.black} />
           </TouchableOpacity>
-          <Button title={'Изучить'} />
+          <Button onPress={handlePressLearn} title={'Изучить'} />
           <Button style={{marginTop: 16}} title={'Тест'} />
         </View>
       </View>

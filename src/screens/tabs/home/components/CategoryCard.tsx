@@ -1,7 +1,8 @@
 import React from 'react';
-import {Image, StyleSheet, TouchableOpacity, View} from 'react-native';
+import {StyleSheet, TouchableOpacity, View} from 'react-native';
 import {AgEnum, Text} from '../../../../components/ui/Text';
 import {DimensionHelper} from '../../../../helpers/DimensionHelper';
+import FastImage from 'react-native-fast-image';
 
 interface ICategoryCard {
   id: string;
@@ -14,7 +15,7 @@ export const CategoryCard = ({title, image, onPress}: ICategoryCard) => {
   return (
     <View style={styles.container}>
       <TouchableOpacity onPress={onPress} style={styles.containerItem}>
-        <Image style={styles.img} source={{uri: image}} />
+        <FastImage style={styles.img} source={{uri: image}} />
         <Text style={{marginTop: 8}} align={'center'} Ag={AgEnum.Subtitle}>
           {title}
         </Text>
