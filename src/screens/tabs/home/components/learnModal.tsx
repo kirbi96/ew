@@ -12,10 +12,17 @@ interface ILearnModal {
   closeModal: () => void;
 }
 
+enum EModalAction {
+  LEARN = 'LEARN',
+  TEST = 'TEST',
+}
+
 export const LearnModal = ({visible, closeModal}: ILearnModal) => {
-  const handlePressLearn = () => {
+  const handlePressBtn = (action: EModalAction) => {
     closeModal();
-    Navigation.navigate(screens.LEARN);
+    Navigation.navigate(
+      action === EModalAction.LEARN ? screens.LEARN : screens.TEST,
+    );
   };
 
   return (
@@ -25,8 +32,15 @@ export const LearnModal = ({visible, closeModal}: ILearnModal) => {
           <TouchableOpacity onPress={closeModal} style={styles.close}>
             <IconSvgClose color={Colors.black} />
           </TouchableOpacity>
-          <Button onPress={handlePressLearn} title={'Изучить'} />
-          <Button style={{marginTop: 16}} title={'Тест'} />
+          <Button
+            onPress={() => handlePressBtn(EModalAction.LEARN)}
+            title={'Изучить'}
+          />
+          <Button
+            onPress={() => handlePressBtn(EModalAction.TEST)}
+            style={{marginTop: 16}}
+            title={'Тест'}
+          />
         </View>
       </View>
     </Modal>

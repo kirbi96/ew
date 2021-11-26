@@ -99,6 +99,12 @@ export const LearnScrollItem = (props: ILearnScrollItem) => {
             title={'Завершить урок'}
           />
         )}
+
+        {index === 0 && (
+          <Text color={Colors.gray300} align={'right'} Ag={AgEnum.Description}>
+            Свайпните экран вправо
+          </Text>
+        )}
       </View>
     </View>
   );
