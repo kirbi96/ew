@@ -5,6 +5,7 @@ import Animated, {
   useSharedValue,
 } from 'react-native-reanimated';
 import {LearnScrollItem} from '../../components/LearnScrollItem';
+import {mainContainer} from '../../styles/MainStyles';
 
 const data = [
   {
