@@ -21,7 +21,7 @@ export const LearnModal = ({visible, closeModal}: ILearnModal) => {
   const handlePressBtn = (action: EModalAction) => {
     closeModal();
     Navigation.navigate(
-      action === EModalAction.LEARN ? screens.LEARN : screens.TEST,
+      action === EModalAction.LEARN ? screens.LEARN : screens.SELECT_TEST,
     );
   };
 

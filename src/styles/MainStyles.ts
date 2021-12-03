@@ -1,17 +1,19 @@
-export const mainContainer = {
+import {StyleProp} from 'react-native';
+
+export const mainContainer: StyleProp<any> = {
   paddingHorizontal: 16,
 };
 
-export const flexRow = {
+export const flexRow: StyleProp<any> = {
   flexDirection: 'row',
 };
 
-export const flexRowBetween = {
+export const flexRowBetween: StyleProp<any> = {
   flexDirection: 'row',
   justifyContent: 'space-between',
 };
 
-export const flexRowWrap = {
+export const flexRowWrap: StyleProp<any> = {
   flexDirection: 'row',
   flexWrap: 'wrap',
 };
