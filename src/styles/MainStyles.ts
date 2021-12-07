@@ -16,4 +16,5 @@ export const flexRowBetween: StyleProp<any> = {
 export const flexRowWrap: StyleProp<any> = {
   flexDirection: 'row',
   flexWrap: 'wrap',
+  justifyContent: 'space-between',
 };

@@ -8,6 +8,7 @@ import {TestHelper} from '../../../helpers/TestHelper';
 import Modal from 'react-native-modal';
 import {Button} from '../../../components/ui/Button';
 import Navigation from '../../../base/Navigation';
+import {TestEndModal} from '../../../components/TestEndModal';
 
 const data = [
   {
@@ -157,24 +158,11 @@ export const CollationTestScreen = () => {
         </Text>
       )}
       {endTest && (
-        <Modal isVisible={endTest} style={styles.modalView}>
-          <View style={styles.containerStyle}>
-            <View style={styles.content}>
-              <Text
-                color={TestHelper.getModalEndTitleColor(errorsCount)}
-                align={'center'}
-                Ag={AgEnum.H2}>
-                {TestHelper.getModalEndTitle(errorsCount)}!{'\n'}
-                {'\n'}ошибок допущено {errorsCount}
-              </Text>
-              <Button
-                onPress={endedTest}
-                style={{marginTop: 32}}
-                title={'Завершить'}
-              />
-            </View>
-          </View>
-        </Modal>
+        <TestEndModal
+          errorsCount={errorsCount}
+          endTest={endTest}
+          endedTest={endedTest}
+        />
       )}
     </View>
   );
@@ -204,25 +192,5 @@ const styles = StyleSheet.create({
   },
   errorCount: {
     marginTop: 32,
-  },
-  modalView: {
-    position: 'absolute',
-    top: '30%',
-    justifyContent: 'center',
-  },
-  containerStyle: {
-    flex: 1,
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    alignItems: 'flex-end',
-  },
-  content: {
-    borderRadius: 8,
-    width: '100%',
-    paddingHorizontal: 26,
-    paddingBottom: 32,
-    paddingTop: 42,
-    backgroundColor: 'white',
-    overflow: 'hidden',
   },
 });
