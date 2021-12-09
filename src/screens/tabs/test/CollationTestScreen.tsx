@@ -5,8 +5,6 @@ import {flexRowBetween, mainContainer} from '../../../styles/MainStyles';
 import {AgEnum, Text} from '../../../components/ui/Text';
 import {Colors} from '../../../styles/Colors';
 import {TestHelper} from '../../../helpers/TestHelper';
-import Modal from 'react-native-modal';
-import {Button} from '../../../components/ui/Button';
 import Navigation from '../../../base/Navigation';
 import {TestEndModal} from '../../../components/TestEndModal';
 

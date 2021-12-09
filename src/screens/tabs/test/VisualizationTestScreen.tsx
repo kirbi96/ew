@@ -100,7 +100,7 @@ export const VisualizationTestScreen = () => {
   const [endTest, setEndTest] = useState(false);
   const [errorsCount, setErrorsCount] = useState(0);
 
-  const pressAnswer = (item: unknown) => {
+  const pressAnswer = (item: any) => {
     if (item.correct) {
       if (activeWord === data.length - 1) {
         setEndTest(true);

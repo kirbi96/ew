@@ -5,7 +5,7 @@ import {AgEnum, Text} from './Text';
 // import {IconSvgEye} from '../../assets/icons/IconSvgEye';
 
 interface IInput {
-  label: string;
+  label?: string;
   placeholder?: string;
   value?: string | undefined;
   renderRightAccessory?: any;
@@ -53,11 +53,6 @@ const Input = ({
     if (!onChangeText) {
       return;
     }
-
-    // if (inputKey === 'phone' || inputKey === 'newPhone') {
-    //   onChangeText(DataHelper.getPhone(text), inputKey);
-    //   return;
-    // }
     onChangeText(text, inputKey);
   };
 
@@ -119,8 +114,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingRight: 16,
     backgroundColor: Colors.white,
-    borderBottomColor: Colors.light_grey,
-    borderBottomWidth: 1,
+    borderColor: Colors.leaf,
+    borderWidth: 1,
+    borderRadius: 8,
   },
   shadowInput: {
     shadowOffset: {width: 0, height: 2},
